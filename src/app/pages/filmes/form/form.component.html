@@ -1,0 +1,93 @@
+<div class="container">
+    <h1>{{title}} Filme</h1>
+    <p>Preencha todos os campos!</p>
+    <form [formGroup]="filmeForm" (submit)="onSubmit()">
+        <div class="form-group">
+            <label>Título</label>
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="pwd">Gênero</label>
+                    <select class="form-control" formControlName="genre">
+                        <option value="0">Ação</option>
+                        <option value="1">Comédia</option>
+                        <option value="2">Drama</option>
+                        <option value="3">Sci-Fi</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                  <label for="pwd">Tipo de Filme</label>
+                  <select class="form-control" formControlName="typeMovie">
+                    <option value="0">24 horas</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                  <label for="pwd">Tipo Produto</label>
+                  <select class="form-control" formControlName="productType">
+                    <option value="0">VHS</option>
+                    <option value="1">DVD</option>
+                    <option value="2">Blue-Ray</option>
+                    <option value="3">Cloud</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                <label>Principais Atores</label>
+                <input type="text" class="form-control" formControlName="mainActors">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                  <label>Principais Diretores</label>
+                  <input type="text" class="form-control" formControlName="mainDirectors">
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                <label>Fornecedor</label>
+                <input type="text" class="form-control" formControlName="provider">
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                  <label>Tipo de Idioma</label>
+                  <input type="text" class="form-control" formControlName="language">
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                  <label>Valor da Locação</label>
+                  <input type="text" class="form-control" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" min="3" formControlName="price">
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                  <label>Data do Cadastro</label>
+                  <input type="date" class="form-control" formControlName="createdAt">
+              </div>
+            </div>
+        </div>
+        <h3>Foto de Capa do Filme</h3>
+        <img [src]="coverShow" alt="cover" width="100" height="100%">
+        <div class="my-1">
+            <input type="file" formControlName="cover">
+        </div>
+        <button type="submit" [disabled]="!filmeForm.valid" class="btn btn-success mr-1">Salvar</button>
+        <button type="button" (click)="goBack()" class="btn btn-warning">Cancelar</button>
+    </form>
+    <p-toast></p-toast>
+</div>
