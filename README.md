@@ -1,8 +1,12 @@
-# Filmes
+# App-Locadora
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+Projeto onde tem exibe uma listagem simples dos filmes e uma página para criar/editar os filmes.
+Esse APP não possui serviço de requisições.
+
+Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
 ## Install Node Modules
+
 Run `npm i`
 
 ## Development server
